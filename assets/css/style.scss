@@ -1,0 +1,414 @@
+$white: #fff;
+$primary: #F24259;
+$black : #00000a;
+$gray: #f7f7f7;
+$text: #666;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+html{
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+.container{
+    width: 110rem;
+    margin: 0 auto;
+}
+
+section{
+    width: 100%;
+    overflow: hidden;
+    padding: 10rem 0;
+}
+
+.title{
+    margin-bottom: 3rem;
+
+    h2{
+        position: relative;
+        font-size: 3.8rem;
+        font-weight: 300;
+        color: $black;
+        padding-left: 1.5rem;
+
+        &::after{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            content: "";
+            display: block;
+            width: 0.125rem;
+            height: 50%;
+            outline: none;
+            background-color: $primary;
+        }
+
+        span{
+            font-weight: 700;
+        }
+    }
+}
+
+/*#region Header Codes*/
+
+header{
+    width: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    overflow: hidden;
+    padding: 1.5rem 0;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+
+    &.scroll{
+        background-color: $white;
+
+        .container{
+            #header-menu{
+                nav{
+                    ul{
+                        li{
+                            a{
+                                color: $black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        #header-logo{
+            img{
+                width: 10rem;
+            }
+        }
+    
+        #header-menu{
+            nav{
+                ul{
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+    
+                    li{
+                        margin: 1.5rem 0.5rem;
+
+                        &:hover{
+                            a{
+                                color: $primary;
+                            }
+                        }
+
+                        a{
+                            font-size: 1.4rem;
+                            font-weight: 600;
+                            color: $white;
+                            padding: 0.8rem;
+                            transition: color 0.3s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*#endregion*/
+
+/*#region Main Codes*/
+
+main{
+
+    section#home{
+        position: relative;
+        height: 100vh;
+        padding: 0;
+        background-image: url(../img/home-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: left center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &::before{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $black;
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            text-align: center;
+            z-index: 1;
+
+            h3{
+                width: 100%;
+                font-size: 3.5rem;
+                font-weight: 200;
+                color: $white;
+            }
+
+            h1{
+                width: 100%;
+                text-transform: uppercase;
+                font-size: 7rem;
+                font-weight: 700;
+                color: $white;
+                line-height: 1.75;
+                margin: 1rem 0;
+
+                span{
+                    color: $primary;
+                }
+            }
+
+            p{
+                font-size: 1.6rem;
+                font-weight: 400;
+                color: $white;
+                margin-bottom: 3rem;
+            }
+
+            a{
+                height: 3.75rem;
+                overflow: hidden;
+                position: relative;
+                display: inline-block;
+                text-transform: uppercase;
+                margin: 0 1rem;
+                padding: 1rem 3rem;
+                border-radius: 0.5rem;
+                background-color: transparent;
+                border: 0.15rem solid $white;
+                transition-property: background-color,border-color;
+                transition: 0.3s ease;
+
+                &:hover{
+                    &::after{
+                        left: 0;
+                    }
+                    span{
+                        color: $black;
+                    }
+                }
+  
+                span{
+                    z-index: 2;
+                    color: $white;
+                    font-size: 1.3rem;
+                    font-weight: 700;
+                    margin: 0;
+                    transition: color 0.3s ease;
+                }
+
+                &::after{
+                    content: "";
+                    display: inline-block;
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $white;
+                    transition: left 0.3s ease;
+                    z-index: -1;
+                }
+
+                &:last-child{
+                    border-color: $primary;
+                    background-color: $primary;
+
+                    &:hover{
+                        border-color: $white;
+                        background-color: $white;
+
+                        span{
+                            color: $black
+                        }
+                    }
+
+                    &::after{
+                        content: none;
+                    }
+                }
+            }
+        }
+
+        #home-scroll{
+            position: absolute;
+            bottom: 7.5%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3.5rem;
+            height: 3.5rem;
+            background-color: transparent;
+            border: 0.15rem solid $white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition-property: background-color,border-color;
+            transition: 0.3s ease;
+            z-index: 20;
+
+            &:hover{
+                background-color: $primary;
+                border-color: $primary;
+            }
+
+            i{
+                font-size: 1.5rem;
+                color: $white;
+            }
+        }
+    }
+
+    section#about{
+        .container{
+            #about-slogan{
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 8rem;
+
+                h4{
+                    font-size: 3rem;
+                    font-weight: 300;
+                    color: $black;
+                    margin-bottom: 2.5rem;
+
+                    span{
+                        font-weight: 700;
+                    }
+                }
+
+                p{
+                    width: 100%;
+                    max-width: 70rem;
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                    color: $text;
+                    line-height: 1.4;
+                }
+            }
+
+            #about-content{
+                display: flex;
+                justify-content: space-between;
+
+                #about-text{
+                    width: 47.5%;
+ 
+                    p{
+                        font-size: 1.5rem;
+                        font-weight: 400;
+                        color: $text;
+                        line-height: 1.4;
+                    }
+                }
+
+                #about-skills{
+                    width: 47.5%;
+                    
+                    .skill{
+                        margin-bottom: 2.5rem;
+
+                        p{
+                            font-size: 1.2rem;
+                            font-weight: 600;
+                            color: $black;
+                            margin-bottom: 0.8rem;
+                        }
+
+                        .skill-bar{
+                            background-color: $gray;
+                            height: 0.15rem;
+
+                            span{
+                                display: inline-block;
+                                width: 0%;
+                                height: 0.15rem;
+                                background-color: $primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #about-cards{
+            padding: 8rem 0;
+            margin-top: 8rem;
+            background-color: $gray;
+            
+            .container{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .card{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    width: calc(33.33% - 3rem);
+                    padding: 3rem;
+                    background-color: $white;
+                    border-radius: 0.75rem;
+
+                    i{
+                        font-size: 5rem;
+                        color: $primary;
+                        margin-bottom: 1.5rem;
+                    }
+
+                    h4{
+                        font-size: 1.8rem;
+                        font-weight: 600;
+                        color: $black;
+                        margin-bottom: 1.5rem;
+                    }
+
+                    p{
+                        font-size: 1.4rem;
+                        font-weight: 400;
+                        color: $text;
+                        line-height: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+
+    section#features{
+
+    }
+}
+
+/*#endregion*/

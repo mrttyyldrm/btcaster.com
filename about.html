@@ -1,0 +1,59 @@
+<div class="container">
+    <div id="about-slogan">
+        <h4>We are <span>Awesome</span> Agency</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+    </div>
+    <div id="about-title" class="title">
+        <h2>Our<br>
+        <span>Mission</span></h2>
+    </div>
+    <div id="about-content">
+        <div id="about-text">
+            <p>We’re full service which means we’ve got you covered on design and content right through to digital. You’ll form a lasting relationship with us, collaboration is central to everything we do. We’ll push you out of your comfort zone from time-to-time, but this is where you’ll shine. Bottom line is we want you to succeed at Faculty We’re full service which means we’ve got you covered on design and content right through to digital.</p>
+        </div>
+        <div id="about-skills">
+            <div class="skill">
+                <p>Branding</p>
+                <div class="skill-bar">
+                    <span ratio="80"></span>
+                </div>
+            </div>
+            <div class="skill">
+                <p>Web Desin</p>
+                <div class="skill-bar">
+                    <span ratio="95"></span>
+                </div>
+            </div>
+            <div class="skill">
+                <p>Graphic Design</p>
+                <div class="skill-bar">
+                    <span ratio="85"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="about-cards">
+    <div class="container">
+        <div class="card">
+            <i class="fa-solid fa-book"></i>
+            <h4>Branding</h4>
+            <p>Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been the industry's</p>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-file-code"></i>
+            <h4>Development</h4>
+            <p>Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been the industry's</p>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-chart-simple"></i>
+            <h4>Marketing</h4>
+            <p>Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been the industry's</p>
+        </div>
+    </div>
+</div>
+<script>
+    $(".skill-bar").each(function(){
+        $(this).children("span").css("width",$(this).children("span").attr("ratio") + "%");
+    });
+</script>

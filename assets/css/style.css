@@ -1,0 +1,329 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 110rem;
+  margin: 0 auto;
+}
+
+section {
+  width: 100%;
+  overflow: hidden;
+  padding: 10rem 0;
+}
+
+.title {
+  margin-bottom: 3rem;
+}
+.title h2 {
+  position: relative;
+  font-size: 3.8rem;
+  font-weight: 300;
+  color: #00000a;
+  padding-left: 1.5rem;
+}
+.title h2::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 0.125rem;
+  height: 50%;
+  outline: none;
+  background-color: #F24259;
+}
+.title h2 span {
+  font-weight: 700;
+}
+
+/*#region Header Codes*/
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  padding: 1.5rem 0;
+  z-index: 100;
+  transition: background-color 0.3s ease;
+}
+header.scroll {
+  background-color: #fff;
+}
+header.scroll .container #header-menu nav ul li a {
+  color: #00000a;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .container #header-logo img {
+  width: 10rem;
+}
+header .container #header-menu nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+header .container #header-menu nav ul li {
+  margin: 1.5rem 0.5rem;
+}
+header .container #header-menu nav ul li:hover a {
+  color: #F24259;
+}
+header .container #header-menu nav ul li a {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 0.8rem;
+  transition: color 0.3s ease;
+}
+
+/*#endregion*/
+/*#region Main Codes*/
+main section#home {
+  position: relative;
+  height: 100vh;
+  padding: 0;
+  background-image: url(../img/home-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main section#home::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000a;
+  opacity: 0.5;
+  z-index: 0;
+}
+main section#home .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  z-index: 1;
+}
+main section#home .container h3 {
+  width: 100%;
+  font-size: 3.5rem;
+  font-weight: 200;
+  color: #fff;
+}
+main section#home .container h1 {
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 7rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.75;
+  margin: 1rem 0;
+}
+main section#home .container h1 span {
+  color: #F24259;
+}
+main section#home .container p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 3rem;
+}
+main section#home .container a {
+  height: 3.75rem;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  margin: 0 1rem;
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  border: 0.15rem solid #fff;
+  transition-property: background-color, border-color;
+  transition: 0.3s ease;
+}
+main section#home .container a:hover::after {
+  left: 0;
+}
+main section#home .container a:hover span {
+  color: #00000a;
+}
+main section#home .container a span {
+  z-index: 2;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+main section#home .container a::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+main section#home .container a:last-child {
+  border-color: #F24259;
+  background-color: #F24259;
+}
+main section#home .container a:last-child:hover {
+  border-color: #fff;
+  background-color: #fff;
+}
+main section#home .container a:last-child:hover span {
+  color: #00000a;
+}
+main section#home .container a:last-child::after {
+  content: none;
+}
+main section#home #home-scroll {
+  position: absolute;
+  bottom: 7.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: transparent;
+  border: 0.15rem solid #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-property: background-color, border-color;
+  transition: 0.3s ease;
+  z-index: 20;
+}
+main section#home #home-scroll:hover {
+  background-color: #F24259;
+  border-color: #F24259;
+}
+main section#home #home-scroll i {
+  font-size: 1.5rem;
+  color: #fff;
+}
+main section#about .container #about-slogan {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 8rem;
+}
+main section#about .container #about-slogan h4 {
+  font-size: 3rem;
+  font-weight: 300;
+  color: #00000a;
+  margin-bottom: 2.5rem;
+}
+main section#about .container #about-slogan h4 span {
+  font-weight: 700;
+}
+main section#about .container #about-slogan p {
+  width: 100%;
+  max-width: 70rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #666;
+  line-height: 1.4;
+}
+main section#about .container #about-content {
+  display: flex;
+  justify-content: space-between;
+}
+main section#about .container #about-content #about-text {
+  width: 47.5%;
+}
+main section#about .container #about-content #about-text p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #666;
+  line-height: 1.4;
+}
+main section#about .container #about-content #about-skills {
+  width: 47.5%;
+}
+main section#about .container #about-content #about-skills .skill {
+  margin-bottom: 2.5rem;
+}
+main section#about .container #about-content #about-skills .skill p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #00000a;
+  margin-bottom: 0.8rem;
+}
+main section#about .container #about-content #about-skills .skill .skill-bar {
+  background-color: #f7f7f7;
+  height: 0.15rem;
+}
+main section#about .container #about-content #about-skills .skill .skill-bar span {
+  display: inline-block;
+  width: 0%;
+  height: 0.15rem;
+  background-color: #F24259;
+}
+main section#about #about-cards {
+  padding: 8rem 0;
+  margin-top: 8rem;
+  background-color: #f7f7f7;
+}
+main section#about #about-cards .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main section#about #about-cards .container .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: calc(33.33% - 3rem);
+  padding: 3rem;
+  background-color: #fff;
+  border-radius: 0.75rem;
+}
+main section#about #about-cards .container .card i {
+  font-size: 5rem;
+  color: #F24259;
+  margin-bottom: 1.5rem;
+}
+main section#about #about-cards .container .card h4 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #00000a;
+  margin-bottom: 1.5rem;
+}
+main section#about #about-cards .container .card p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #666;
+  line-height: 1.6rem;
+}
+/*#endregion*//*# sourceMappingURL=style.css.map */

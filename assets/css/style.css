@@ -628,4 +628,101 @@ main section#contact .container #contact-content form a span {
   transition: color 0.3s ease;
 }
 
+/*#endregion*/
+/*#region Footer Codes*/
+footer {
+  padding: 8rem 0;
+  background-color: #111;
+}
+footer .container #footer-info {
+  padding-bottom: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .container #footer-info .info {
+  cursor: pointer;
+  width: calc(33.33% - 2rem);
+  padding: 3rem;
+  background-color: #161616;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 0.15rem solid #161616;
+  transition: border-color 0.3s ease;
+}
+footer .container #footer-info .info:hover {
+  border-color: #F24259;
+}
+footer .container #footer-info .info .info-icon {
+  margin-right: 3rem;
+}
+footer .container #footer-info .info .info-icon i {
+  font-size: 3.5rem;
+  color: #fff;
+}
+footer .container #footer-info .info .info-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+footer .container #footer-info .info .info-text h6 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+footer .container #footer-info .info .info-text a p {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #666;
+}
+footer .container #footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer .container #footer-content #footer-logo {
+  padding: 1.5rem 0;
+}
+footer .container #footer-content #footer-logo a img {
+  width: 10rem;
+}
+footer .container #footer-content #footer-social {
+  margin: 1.5rem 0 2.5rem 0;
+}
+footer .container #footer-content #footer-social ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .container #footer-content #footer-social ul li {
+  margin: 0 1.25rem;
+}
+footer .container #footer-content #footer-social ul li:hover a i {
+  color: #fff;
+}
+footer .container #footer-content #footer-social ul li a i {
+  font-size: 1.8rem;
+  color: #666;
+  transition: color 0.3s ease;
+}
+footer .container #footer-content #footer-copyright {
+  width: 100%;
+  text-align: center;
+}
+footer .container #footer-content #footer-copyright p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #666;
+}
+footer .container #footer-content #footer-copyright p a {
+  font-weight: 600;
+  color: #666;
+  transition: color 0.3s ease;
+}
+footer .container #footer-content #footer-copyright p a:hover {
+  color: #fff;
+}
+
 /*#endregion*//*# sourceMappingURL=style.css.map */

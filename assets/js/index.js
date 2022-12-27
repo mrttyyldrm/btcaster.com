@@ -5,4 +5,5 @@ $(document).ready(function(){
     $("section#features").load("features.html");
     $("section#pricing").load("pricing.html");
     $("section#contact").load("contact.html");
+    $("footer").load("footer.html");
 });

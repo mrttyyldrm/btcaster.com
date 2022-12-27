@@ -641,6 +641,124 @@ main{
             }
         }
     }
+
+    section#contact{
+        .container{
+            #contact-title{
+                display: flex;
+                justify-content: center;
+                text-align: center;
+
+                h2{
+                    padding-left: 0;
+                    
+                    &::after{
+                        width: 6rem;
+                        height: 0.125rem;
+                        bottom: -1rem;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+            }
+
+            #contact-content{
+                display: flex;
+                justify-content: center;
+
+                form{
+                    width: 100%;
+                    max-width: 57.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
+                    flex-wrap: wrap;
+
+                    input,textarea{
+                        width: 100%;
+                        margin-bottom: 2rem;
+                        border: none;
+                        outline: none;
+                        padding: 1rem;
+                        font-size: 1.4rem;
+                        font-weight: 600;
+                        color: $black;
+                        background-color: $gray;
+
+                        &::placeholder{
+                            color: $text;
+                            font-weight: 500;
+                        }
+
+                        &:nth-child(1){
+                            width: calc(50% - 1rem);
+                            margin-right: 1rem;
+                        }
+                        &:nth-child(2){
+                            width: calc(50% - 1rem);
+                            margin-left: 1rem;
+                        }
+
+                        &[type=submit]{
+                            cursor: pointer;
+                            width: calc(50% - 2rem);
+                            background-color: $primary;
+                            color: $white;
+                            font-weight: 500;
+                        }
+                    }
+
+                    textarea{
+                        height: 16rem;
+                        resize: none;
+                    }
+
+                    a{
+                        position: relative;
+                        width: 100%;
+                        max-width: 16rem;
+                        padding: 1rem 0;
+                        background-color: $primary;
+                        display: flex;
+                        justify-content: center;
+                        border: 0.15rem solid $primary;
+
+                        &:hover{
+                            
+                            &::after{
+                                width: 100%;
+                            }
+
+                            span{
+                                color: $black;
+                            }
+                        }
+
+                        &::after{
+                            content: "";
+                            display: inline-block;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 0;
+                            height: 100%;
+                            background-color: $white;
+                            z-index: 1;
+                            transition: width 0.3s ease;
+                        }
+
+                        span{
+                            font-size: 1.4rem;
+                            font-weight: 600;
+                            color: $white;
+                            z-index: 2;
+                            transition: color 0.3s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 /*#endregion*/

@@ -523,5 +523,109 @@ main section#pricing .container #pricing-content .pricing .pricing-button a span
   z-index: 2;
   transition: color 0.3s ease;
 }
+main section#contact .container #contact-title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+main section#contact .container #contact-title h2 {
+  padding-left: 0;
+}
+main section#contact .container #contact-title h2::after {
+  width: 6rem;
+  height: 0.125rem;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+main section#contact .container #contact-content {
+  display: flex;
+  justify-content: center;
+}
+main section#contact .container #contact-content form {
+  width: 100%;
+  max-width: 57.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+main section#contact .container #contact-content form input, main section#contact .container #contact-content form textarea {
+  width: 100%;
+  margin-bottom: 2rem;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #00000a;
+  background-color: #f7f7f7;
+}
+main section#contact .container #contact-content form input::-moz-placeholder, main section#contact .container #contact-content form textarea::-moz-placeholder {
+  color: #666;
+  font-weight: 500;
+}
+main section#contact .container #contact-content form input:-ms-input-placeholder, main section#contact .container #contact-content form textarea:-ms-input-placeholder {
+  color: #666;
+  font-weight: 500;
+}
+main section#contact .container #contact-content form input::placeholder, main section#contact .container #contact-content form textarea::placeholder {
+  color: #666;
+  font-weight: 500;
+}
+main section#contact .container #contact-content form input:nth-child(1), main section#contact .container #contact-content form textarea:nth-child(1) {
+  width: calc(50% - 1rem);
+  margin-right: 1rem;
+}
+main section#contact .container #contact-content form input:nth-child(2), main section#contact .container #contact-content form textarea:nth-child(2) {
+  width: calc(50% - 1rem);
+  margin-left: 1rem;
+}
+main section#contact .container #contact-content form input[type=submit], main section#contact .container #contact-content form textarea[type=submit] {
+  cursor: pointer;
+  width: calc(50% - 2rem);
+  background-color: #F24259;
+  color: #fff;
+  font-weight: 500;
+}
+main section#contact .container #contact-content form textarea {
+  height: 16rem;
+  resize: none;
+}
+main section#contact .container #contact-content form a {
+  position: relative;
+  width: 100%;
+  max-width: 16rem;
+  padding: 1rem 0;
+  background-color: #F24259;
+  display: flex;
+  justify-content: center;
+  border: 0.15rem solid #F24259;
+}
+main section#contact .container #contact-content form a:hover::after {
+  width: 100%;
+}
+main section#contact .container #contact-content form a:hover span {
+  color: #00000a;
+}
+main section#contact .container #contact-content form a::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1;
+  transition: width 0.3s ease;
+}
+main section#contact .container #contact-content form a span {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
 
 /*#endregion*//*# sourceMappingURL=style.css.map */

@@ -169,59 +169,51 @@ main section#home .container #home-content p {
   color: #fff;
   margin-bottom: 3rem;
 }
-main section#home .container #home-content a {
-  height: 3.75rem;
-  overflow: hidden;
+main section#home .container #home-content #home-buttons {
+  display: flex;
+  justify-content: center;
+}
+main section#home .container #home-content #home-buttons a {
   position: relative;
-  display: inline-block;
-  text-transform: uppercase;
-  margin: 0 1rem;
-  padding: 1rem 3rem;
-  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 16rem;
+  padding: 1rem 0;
+  margin: 0 1.5rem;
   background-color: transparent;
-  border: 0.15rem solid #fff;
-  transition-property: background-color, border-color;
-  transition: 0.3s ease;
+  display: flex;
+  justify-content: center;
+  border: 0.15rem solid #F24259;
 }
-main section#home .container #home-content a:hover::after {
-  left: 0;
+main section#home .container #home-content #home-buttons a:last-child {
+  background-color: #F24259;
 }
-main section#home .container #home-content a:hover span {
+main section#home .container #home-content #home-buttons a:hover {
+  border-color: #fff;
+}
+main section#home .container #home-content #home-buttons a:hover::after {
+  width: 100%;
+}
+main section#home .container #home-content #home-buttons a:hover span {
   color: #00000a;
 }
-main section#home .container #home-content a span {
-  z-index: 2;
-  color: #fff;
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin: 0;
-  transition: color 0.3s ease;
-}
-main section#home .container #home-content a::after {
+main section#home .container #home-content #home-buttons a::after {
   content: "";
   display: inline-block;
   position: absolute;
   top: 0;
-  left: -100%;
-  width: 100%;
+  left: 0;
+  width: 0;
   height: 100%;
   background-color: #fff;
-  transition: left 0.3s ease;
-  z-index: -1;
+  z-index: 1;
+  transition: width 0.3s ease;
 }
-main section#home .container #home-content a:last-child {
-  border-color: #F24259;
-  background-color: #F24259;
-}
-main section#home .container #home-content a:last-child:hover {
-  border-color: #fff;
-  background-color: #fff;
-}
-main section#home .container #home-content a:last-child:hover span {
-  color: #00000a;
-}
-main section#home .container #home-content a:last-child::after {
-  content: none;
+main section#home .container #home-content #home-buttons a span {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  z-index: 2;
+  transition: color 0.3s ease;
 }
 main section#home .container #home-scroll {
   position: absolute;
@@ -325,10 +317,11 @@ main section#about #about-cards .container .card {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: calc(33.33% - 3rem);
+  width: calc(33.33% - 2rem);
   padding: 3rem;
   background-color: #fff;
   border-radius: 0.75rem;
+  box-shadow: 0 0 1rem rgba(12, 12, 12, 0.075);
 }
 main section#about #about-cards .container .card i {
   font-size: 5rem;
@@ -376,11 +369,11 @@ main section#features .container #features-content .feature {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: calc(33.33% - 3rem);
+  width: calc(33.33% - 2rem);
   padding: 3rem;
   background-color: rgba(70, 70, 70, 0.55);
   border-radius: 0.75rem;
-  margin-bottom: 4.5rem;
+  margin-bottom: 3rem;
   z-index: 1;
   transition: background-color 0.3s ease;
 }
@@ -410,6 +403,124 @@ main section#features .container #features-content .feature p {
   font-weight: 400;
   color: #fff;
   line-height: 1.6rem;
+  transition: color 0.3s ease;
+}
+main section#pricing {
+  background-color: #f7f7f7;
+}
+main section#pricing .container #pricing-content {
+  display: flex;
+  justify-content: space-between;
+}
+main section#pricing .container #pricing-content .pricing {
+  width: calc(33.33% - 2rem);
+  background-color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 1rem rgba(12, 12, 12, 0.075);
+  padding: 3rem;
+  transition: transform 0.3s ease;
+}
+main section#pricing .container #pricing-content .pricing:hover {
+  transform: scale(1.05);
+}
+main section#pricing .container #pricing-content .pricing .pricing-title {
+  width: 100%;
+  padding-bottom: 3rem;
+  border-bottom: 0.125rem solid #eee;
+}
+main section#pricing .container #pricing-content .pricing .pricing-title h4 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #00000a;
+}
+main section#pricing .container #pricing-content .pricing .pricing-price {
+  width: 100%;
+  padding: 3rem 0;
+  border-bottom: 0.125rem solid #eee;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+main section#pricing .container #pricing-content .pricing .pricing-price h6 {
+  position: relative;
+  font-size: 5rem;
+  font-weight: 800;
+  color: #00000a;
+  padding-right: 1rem;
+}
+main section#pricing .container #pricing-content .pricing .pricing-price h6 span {
+  position: absolute;
+  top: 0;
+  right: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #00000a;
+}
+main section#pricing .container #pricing-content .pricing .pricing-price p {
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 1rem;
+}
+main section#pricing .container #pricing-content .pricing .pricing-text {
+  width: 100%;
+  padding: 3rem 0;
+  border-bottom: 0.125rem solid #eee;
+}
+main section#pricing .container #pricing-content .pricing .pricing-text ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+main section#pricing .container #pricing-content .pricing .pricing-text ul li {
+  margin: 0.75rem 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #666;
+}
+main section#pricing .container #pricing-content .pricing .pricing-button {
+  width: 100%;
+  padding-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+main section#pricing .container #pricing-content .pricing .pricing-button a {
+  position: relative;
+  width: 100%;
+  max-width: 16rem;
+  padding: 1rem 0;
+  background-color: #F24259;
+  display: flex;
+  justify-content: center;
+  border: 0.15rem solid #F24259;
+}
+main section#pricing .container #pricing-content .pricing .pricing-button a:hover::after {
+  width: 100%;
+}
+main section#pricing .container #pricing-content .pricing .pricing-button a:hover span {
+  color: #00000a;
+}
+main section#pricing .container #pricing-content .pricing .pricing-button a::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1;
+  transition: width 0.3s ease;
+}
+main section#pricing .container #pricing-content .pricing .pricing-button a span {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  z-index: 2;
   transition: color 0.3s ease;
 }
 

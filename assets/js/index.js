@@ -3,4 +3,5 @@ $(document).ready(function(){
     $("section#home").load("home.html");
     $("section#about").load("about.html");
     $("section#features").load("features.html");
+    $("section#pricing").load("pricing.html");
 });

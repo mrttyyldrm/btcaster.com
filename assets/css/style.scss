@@ -218,66 +218,56 @@ main{
                     margin-bottom: 3rem;
                 }
     
-                a{
-                    height: 3.75rem;
-                    overflow: hidden;
-                    position: relative;
-                    display: inline-block;
-                    text-transform: uppercase;
-                    margin: 0 1rem;
-                    padding: 1rem 3rem;
-                    border-radius: 0.5rem;
-                    background-color: transparent;
-                    border: 0.15rem solid $white;
-                    transition-property: background-color,border-color;
-                    transition: 0.3s ease;
-    
-                    &:hover{
-                        &::after{
-                            left: 0;
-                        }
-                        span{
-                            color: $black;
-                        }
-                    }
-      
-                    span{
-                        z-index: 2;
-                        color: $white;
-                        font-size: 1.3rem;
-                        font-weight: 700;
-                        margin: 0;
-                        transition: color 0.3s ease;
-                    }
-    
-                    &::after{
-                        content: "";
-                        display: inline-block;
-                        position: absolute;
-                        top: 0;
-                        left: -100%;
+                #home-buttons{
+                    display: flex;
+                    justify-content: center;
+
+                    a{
+                        position: relative;
                         width: 100%;
-                        height: 100%;
-                        background-color: $white;
-                        transition: left 0.3s ease;
-                        z-index: -1;
-                    }
-    
-                    &:last-child{
-                        border-color: $primary;
-                        background-color: $primary;
+                        max-width: 16rem;
+                        padding: 1rem 0;
+                        margin: 0 1.5rem;
+                        background-color: transparent;
+                        display: flex;
+                        justify-content: center;
+                        border: 0.15rem solid $primary;
+
+                        &:last-child{
+                            background-color: $primary;
+                        }
     
                         &:hover{
                             border-color: $white;
-                            background-color: $white;
+
+                            &::after{
+                                width: 100%;
+                            }
     
                             span{
-                                color: $black
+                                color: $black;
                             }
                         }
     
                         &::after{
-                            content: none;
+                            content: "";
+                            display: inline-block;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 0;
+                            height: 100%;
+                            background-color: $white;
+                            z-index: 1;
+                            transition: width 0.3s ease;
+                        }
+    
+                        span{
+                            font-size: 1.4rem;
+                            font-weight: 600;
+                            color: $white;
+                            z-index: 2;
+                            transition: color 0.3s ease;
                         }
                     }
                 }
@@ -404,10 +394,11 @@ main{
                     flex-direction: column;
                     align-items: center;
                     text-align: center;
-                    width: calc(33.33% - 3rem);
+                    width: calc(33.33% - 2rem);
                     padding: 3rem;
                     background-color: $white;
                     border-radius: 0.75rem;
+                    box-shadow: 0 0 1rem rgba(12, 12, 12, 0.075);
 
                     i{
                         font-size: 5rem;
@@ -463,11 +454,11 @@ main{
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
-                    width: calc(33.33% - 3rem);
+                    width: calc(33.33% - 2rem);
                     padding: 3rem;
                     background-color: rgba(70, 70, 70, 0.55);
                     border-radius: 0.75rem;
-                    margin-bottom: 4.5rem;
+                    margin-bottom: 3rem;
                     z-index: 1;
                     transition: background-color 0.3s ease;
 
@@ -503,6 +494,148 @@ main{
                         color: $white;
                         line-height: 1.6rem;
                         transition: color 0.3s ease;
+                    }
+                }
+            }
+        }
+    }
+
+    section#pricing{
+        background-color: $gray;
+
+        .container{
+            #pricing-content{
+                display: flex;
+                justify-content: space-between;
+
+                .pricing{
+                    width: calc(33.33% - 2rem);
+                    background-color: $white;
+                    border-radius: 0.75rem;
+                    box-shadow: 0 0 1rem rgba(12, 12, 12, 0.075);
+                    padding: 3rem;
+                    transition: transform 0.3s ease;
+
+                    &:hover{
+                        transform: scale(1.05);
+                    }
+
+                    .pricing-title{
+                        width: 100%;
+                        padding-bottom: 3rem;
+                        border-bottom: 0.125rem solid #eee;
+
+                        h4{
+                            text-align: center;
+                            font-size: 2.5rem;
+                            font-weight: 600;
+                            color: $black;
+                        }
+                    }
+
+                    .pricing-price{
+                        width: 100%;
+                        padding: 3rem 0;
+                        border-bottom: 0.125rem solid #eee;
+                        display: flex;
+                        justify-content: center;
+                        align-items: flex-end;
+
+                        h6{
+                            position: relative;
+                            font-size: 5rem;
+                            font-weight: 800;
+                            color: $black;
+                            padding-right: 1rem;
+
+                            span{
+                                position: absolute;
+                                top: 0;
+                                right: 0.5rem;
+                                font-size: 1.4rem;
+                                font-weight: 800;
+                                color: $black;
+                            }
+                        }
+
+                        p{
+                            display: inline-block;
+                            font-size: 1.3rem;
+                            font-weight: 500;
+                            color: $text;
+                            margin-bottom: 1rem;
+                        }
+                    }
+
+                    .pricing-text{
+                        width: 100%;
+                        padding: 3rem 0;
+                        border-bottom: 0.125rem solid #eee;
+
+                        ul{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            align-items: center;
+
+                            li{
+                                margin: 0.75rem 0;
+                                font-size: 1.4rem;
+                                font-weight: 400;
+                                color: $text;
+                            }
+                        }
+                    }
+
+                    .pricing-button{
+                        width: 100%;
+                        padding-top: 3rem;
+                        display: flex;
+                        justify-content: center;
+                        
+                        a{
+                            position: relative;
+                            width: 100%;
+                            max-width: 16rem;
+                            padding: 1rem 0;
+                            background-color: $primary;
+                            display: flex;
+                            justify-content: center;
+                            border: 0.15rem solid $primary;
+
+                            &:hover{
+                                
+                                &::after{
+                                    width: 100%;
+                                }
+
+                                span{
+                                    color: $black;
+                                }
+                            }
+
+                            &::after{
+                                content: "";
+                                display: inline-block;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 0;
+                                height: 100%;
+                                background-color: $white;
+                                z-index: 1;
+                                transition: width 0.3s ease;
+                            }
+
+                            span{
+                                font-size: 1.4rem;
+                                font-weight: 600;
+                                color: $white;
+                                z-index: 2;
+                                transition: color 0.3s ease;
+                            }
+                        }
                     }
                 }
             }

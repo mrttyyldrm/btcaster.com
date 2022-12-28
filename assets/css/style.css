@@ -48,8 +48,8 @@ section {
 }
 .title h2 {
   position: relative;
-  font-size: 3.8rem;
-  font-weight: 300;
+  font-size: 1.8rem;
+  font-weight: 400;
   color: #00000a;
   padding-left: 1.5rem;
 }
@@ -66,8 +66,159 @@ section {
 }
 .title h2 span {
   font-weight: 700;
+  font-size: 3.8rem;
 }
 
+/*#region Animation Codes*/
+.fade-bottom {
+  -webkit-animation: fade-bottom 1s ease 0.5s both paused;
+          animation: fade-bottom 1s ease 0.5s both paused;
+  opacity: 0;
+}
+.fade-bottom.animate {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+@-webkit-keyframes fade-bottom {
+  from {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-bottom {
+  from {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-left {
+  -webkit-animation: fade-left 1.5s ease 0.5s both paused;
+          animation: fade-left 1.5s ease 0.5s both paused;
+  opacity: 0;
+}
+.fade-left.animate {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+@-webkit-keyframes fade-left {
+  from {
+    transform: translateX(-5rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-left {
+  from {
+    transform: translateX(-5rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.fade-right {
+  -webkit-animation: fade-right 1.5s ease 0.5s both paused;
+          animation: fade-right 1.5s ease 0.5s both paused;
+}
+.fade-right.animate {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+@-webkit-keyframes fade-right {
+  from {
+    transform: translateX(5rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-right {
+  from {
+    transform: translateX(5rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.zoom {
+  -webkit-animation: zoom 1s ease 0.5s both paused;
+          animation: zoom 1s ease 0.5s both paused;
+}
+.zoom.animate {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+@-webkit-keyframes zoom {
+  from {
+    transform: scale(0.75);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes zoom {
+  from {
+    transform: scale(0.75);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.opacity {
+  -webkit-animation: opacity 1s ease 0.5s both paused;
+          animation: opacity 1s ease 0.5s both paused;
+}
+.opacity.animate {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+@-webkit-keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.run {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+/*#endregion*/
 /*#region Header Codes*/
 header {
   width: 100%;
@@ -89,7 +240,6 @@ header.scroll .container #header-bar i {
 }
 header.scroll .container #header-menu nav ul li a {
   color: #00000a;
-  font-weight: 700;
 }
 header .container {
   display: flex;
@@ -159,6 +309,11 @@ main section#home .container {
   text-align: center;
   z-index: 1;
 }
+main section#home .container #home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 main section#home .container #home-content h3 {
   width: 100%;
   font-size: 3.5rem;
@@ -178,12 +333,15 @@ main section#home .container #home-content h1 span {
   color: #F24259;
 }
 main section#home .container #home-content p {
+  width: 100%;
+  max-width: 60rem;
   font-size: 1.6rem;
   font-weight: 400;
   color: #fff;
   margin-bottom: 3rem;
 }
 main section#home .container #home-content #home-buttons {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -279,7 +437,7 @@ main section#about .container #about-slogan p {
   font-size: 1.5rem;
   font-weight: 400;
   color: #666;
-  line-height: 1.4;
+  line-height: 1.6;
 }
 main section#about .container #about-content {
   display: flex;
@@ -372,7 +530,7 @@ main section#about #about-cards .container .card p {
   font-size: 1.5rem;
   font-weight: 400;
   color: #666;
-  line-height: 1.6rem;
+  line-height: 1.6;
 }
 main section#features {
   position: relative;
@@ -435,7 +593,7 @@ main section#features .container #features-content .feature p {
   font-size: 1.5rem;
   font-weight: 400;
   color: #fff;
-  line-height: 1.6rem;
+  line-height: 1.6;
   transition: color 0.3s ease;
 }
 main section#pricing {

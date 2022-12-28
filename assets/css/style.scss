@@ -58,8 +58,8 @@ section{
 
     h2{
         position: relative;
-        font-size: 3.8rem;
-        font-weight: 300;
+        font-size: 1.8rem;
+        font-weight: 400;
         color: $black;
         padding-left: 1.5rem;
 
@@ -77,9 +77,113 @@ section{
 
         span{
             font-weight: 700;
+            font-size: 3.8rem;
         }
     }
 }
+
+/*#region Animation Codes*/
+
+.fade-bottom{
+    animation: fade-bottom 1s ease 0.5s both paused;
+    opacity: 0;
+
+    &.animate{
+        animation-play-state: running;
+    }
+
+    @keyframes fade-bottom {
+        from{
+            transform: translateY(3rem);
+            opacity: 0;
+        }
+
+        to{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
+.fade-left{
+    animation: fade-left 1.5s ease 0.5s both paused;
+    opacity: 0;
+
+    &.animate{
+        animation-play-state: running;
+    }
+
+    @keyframes fade-left {
+        from{
+            transform: translateX(-5rem);
+            opacity: 0;
+        }
+
+        to{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+}
+.fade-right{
+    animation: fade-right 1.5s ease 0.5s both paused;
+
+    &.animate{
+        animation-play-state: running;
+    }
+
+    @keyframes fade-right {
+        from{
+            transform: translateX(5rem);
+            opacity: 0;
+        }
+
+        to{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+}
+.zoom{
+    animation: zoom 1s ease 0.5s both paused;
+
+    &.animate{
+        animation-play-state: running;
+    }
+
+    @keyframes zoom {
+        from{
+            transform: scale(0.75);
+            opacity: 0;
+        }
+
+        to{
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}
+.opacity{
+    animation: opacity 1s ease 0.5s both paused;
+
+    &.animate{
+        animation-play-state: running;
+    }
+
+    @keyframes opacity {
+        from{
+            opacity: 0;
+        }
+
+        to{
+            opacity: 1;
+        }
+    }
+}
+.run{
+    animation-play-state: running;
+}
+
+/*#endregion*/
 
 /*#region Header Codes*/
 
@@ -109,7 +213,6 @@ header{
                         li{
                             a{
                                 color: $black;
-                                font-weight: 700;
                             }
                         }
                     }
@@ -206,6 +309,9 @@ main{
             z-index: 1;
 
             #home-content{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
 
                 h3{
                     width: 100%;
@@ -229,6 +335,8 @@ main{
                 }
     
                 p{
+                    width: 100%;
+                    max-width: 60rem;
                     font-size: 1.6rem;
                     font-weight: 400;
                     color: $white;
@@ -236,6 +344,7 @@ main{
                 }
     
                 #home-buttons{
+                    width: 100%;
                     display: flex;
                     justify-content: center;
 
@@ -348,7 +457,7 @@ main{
                     font-size: 1.5rem;
                     font-weight: 400;
                     color: $text;
-                    line-height: 1.4;
+                    line-height: 1.6;
                 }
             }
 
@@ -455,7 +564,7 @@ main{
                         font-size: 1.5rem;
                         font-weight: 400;
                         color: $text;
-                        line-height: 1.6rem;
+                        line-height: 1.6;
                     }
                 }
             }
@@ -529,7 +638,7 @@ main{
                         font-size: 1.5rem;
                         font-weight: 400;
                         color: $white;
-                        line-height: 1.6rem;
+                        line-height: 1.6;
                         transition: color 0.3s ease;
                     }
                 }

@@ -30,7 +30,7 @@ body{
 }
 
 html{
-    font-size: 10px;
+    font-size: 12px;
     scroll-behavior: smooth;
 }
 
@@ -47,7 +47,7 @@ section{
 }
 
 .title{
-    margin-bottom: 4.5rem;
+    margin-bottom: 5.5rem;
 
     &.light{
         h2{
@@ -90,20 +90,26 @@ header{
     overflow: hidden;
     padding: 1.5rem 0;
     z-index: 100;
-    transition-property: background-color,border-bottom;
+    transition-property: background-color,box-shadow;
     transition: 0.3s ease;
 
     &.scroll{
         background-color: $white;
-        border-bottom: 0.15rem solid rgba(12, 12, 12, 0.04);
+        box-shadow: 1rem 0 0.5rem rgba(12, 12, 12, 0.2);
 
         .container{
+            #header-bar{
+                i{
+                    color: $black;
+                }
+            }
             #header-menu{
                 nav{
                     ul{
                         li{
                             a{
                                 color: $black;
+                                font-weight: 700;
                             }
                         }
                     }
@@ -119,7 +125,19 @@ header{
 
         #header-logo{
             img{
-                width: 10rem;
+                height: 3rem;
+            }
+        }
+
+        #header-bar{
+            display: none;
+            margin-right: 0.5rem;
+
+            i{
+                cursor: pointer;
+                font-size: 2.2rem;
+                color: $white;
+                transition: color 0.3s ease;
             }
         }
     
@@ -140,7 +158,7 @@ header{
                         }
 
                         a{
-                            font-size: 1.4rem;
+                            font-size: 1.5rem;
                             font-weight: 600;
                             color: $white;
                             padding: 0.8rem;
@@ -158,7 +176,6 @@ header{
 /*#region Main Codes*/
 
 main{
-
     section#home{
         position: relative;
         height: 100vh;
@@ -263,7 +280,7 @@ main{
                         }
     
                         span{
-                            font-size: 1.4rem;
+                            font-size: 1.5rem;
                             font-weight: 600;
                             color: $white;
                             z-index: 2;
@@ -357,21 +374,37 @@ main{
                         margin-bottom: 2.5rem;
 
                         p{
-                            font-size: 1.2rem;
+                            font-size: 1.5rem;
                             font-weight: 600;
                             color: $black;
                             margin-bottom: 0.8rem;
                         }
 
                         .skill-bar{
+                            position: relative;
                             background-color: $gray;
-                            height: 0.15rem;
+                            height: 0.25rem;
+                            border-radius: 3rem;
 
                             span{
-                                display: inline-block;
+                                position: absolute;
+                                top: 0; left: 0;
+                                border-radius: 3rem;
                                 width: 0%;
-                                height: 0.15rem;
+                                height: 100%;
                                 background-color: $primary;
+                                transition: width 0.3s ease;
+                            }
+
+                            p{
+                                position: absolute;
+                                top: -2.5rem;
+                                left: 0%;
+                                transform: translateX(-100%);
+                                font-size: 1.3rem;
+                                font-weight: 600;
+                                color: $text;
+                                transition: left 0.3s ease;
                             }
                         }
                     }
@@ -399,6 +432,11 @@ main{
                     background-color: $white;
                     border-radius: 0.75rem;
                     box-shadow: 0 0 1rem rgba(12, 12, 12, 0.075);
+                    transition: transform 0.3s ease;
+
+                    &:hover{
+                        transform: scale(1.05);
+                    }
 
                     i{
                         font-size: 5rem;
@@ -414,7 +452,7 @@ main{
                     }
 
                     p{
-                        font-size: 1.4rem;
+                        font-size: 1.5rem;
                         font-weight: 400;
                         color: $text;
                         line-height: 1.6rem;
@@ -450,7 +488,6 @@ main{
                 flex-wrap: wrap;
 
                 .feature{
-                    cursor: pointer;
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
@@ -489,7 +526,7 @@ main{
                     }
 
                     p{
-                        font-size: 1.4rem;
+                        font-size: 1.5rem;
                         font-weight: 400;
                         color: $white;
                         line-height: 1.6rem;
@@ -552,7 +589,7 @@ main{
                                 position: absolute;
                                 top: 0;
                                 right: 0.5rem;
-                                font-size: 1.4rem;
+                                font-size: 1.5rem;
                                 font-weight: 800;
                                 color: $black;
                             }
@@ -560,7 +597,7 @@ main{
 
                         p{
                             display: inline-block;
-                            font-size: 1.3rem;
+                            font-size: 1.35rem;
                             font-weight: 500;
                             color: $text;
                             margin-bottom: 1rem;
@@ -581,7 +618,7 @@ main{
 
                             li{
                                 margin: 0.75rem 0;
-                                font-size: 1.4rem;
+                                font-size: 1.5rem;
                                 font-weight: 400;
                                 color: $text;
                             }
@@ -629,7 +666,7 @@ main{
                             }
 
                             span{
-                                font-size: 1.4rem;
+                                font-size: 1.5rem;
                                 font-weight: 600;
                                 color: $white;
                                 z-index: 2;
@@ -680,7 +717,7 @@ main{
                         border: none;
                         outline: none;
                         padding: 1rem;
-                        font-size: 1.4rem;
+                        font-size: 1.5rem;
                         font-weight: 600;
                         color: $black;
                         background-color: $gray;
@@ -748,7 +785,7 @@ main{
                         }
 
                         span{
-                            font-size: 1.4rem;
+                            font-size: 1.5rem;
                             font-weight: 600;
                             color: $white;
                             z-index: 2;
@@ -766,6 +803,7 @@ main{
 /*#region Footer Codes*/
 
 footer{
+    width: 100%;
     padding: 8rem 0;
     background-color: #111;
 
@@ -778,22 +816,41 @@ footer{
             align-items: center;
 
             .info{
+                position: relative;
                 cursor: pointer;
                 width: calc(33.33% - 2rem);
                 padding: 3rem;
-                background-color: #161616;
+                background-color: #171717;
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
-                border: 0.15rem solid #161616;
-                transition: border-color 0.3s ease;
 
                 &:hover{
-                    border-color: $primary;
+                    &::after{
+                        width: 100%;
+                    }
+
+                    .info-text{
+                        p{
+                            color: $white;
+                        }
+                    }
+                }
+
+                &::after{
+                    content: "";
+                    position: absolute;
+                    top: 0; left: 0;
+                    width: 0;
+                    height: 100%;
+                    background-color: $primary;
+                    transition: width 0.3s ease;
+                    z-index: 1;
                 }
 
                 .info-icon{
                     margin-right: 3rem;
+                    z-index: 2;
 
                     i{
                         font-size: 3.5rem;
@@ -805,6 +862,7 @@ footer{
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
+                    z-index: 2;
 
                     h6{
                         font-size: 1.7rem;
@@ -818,6 +876,7 @@ footer{
                             font-size: 1.6rem;
                             font-weight: 500;
                             color: $text;
+                            transition: color 0.3s ease;
                         }
                     }
                 }
@@ -834,7 +893,7 @@ footer{
 
                 a{
                     img{
-                        width: 10rem;
+                        height: 3.5rem;
                     }
                 }
             }
@@ -874,7 +933,7 @@ footer{
                 text-align: center;
 
                 p{
-                    font-size: 1.4rem;
+                    font-size: 1.5rem;
                     font-weight: 500;
                     color: $text;
 
@@ -893,4 +952,359 @@ footer{
     }
 }
 
+/*#endregion*/
+
+/*#region Responsive Codes*/
+@media screen and (max-width: 1790px){
+    html{
+        font-size: 11.75px;
+    }
+}
+@media screen and (max-width: 1740px){
+    html{
+        font-size: 11.5px;
+    }
+}
+@media screen and (max-width: 1690px){
+    html{
+        font-size: 11.25px;
+    }
+}
+@media screen and (max-width: 1640px){
+    html{
+        font-size: 11px;
+    }
+}
+@media screen and (max-width: 1590px){
+    html{
+        font-size: 10.75px;
+    }
+}
+@media screen and (max-width: 1540px){
+    html{
+        font-size: 10.5px;
+    }
+}
+@media screen and (max-width: 1490px){
+    html{
+        font-size: 10.25px;
+    }
+}
+@media screen and (max-width: 1440px){
+    html{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 1390px){
+    html{
+        font-size: 9.8px;
+    }
+}
+@media screen and (max-width: 1340px){
+    html{
+        font-size: 9.6px;
+    }
+}
+@media screen and (max-width: 1290px){
+    html{
+        font-size: 9.4px;
+    }
+}
+@media screen and (max-width: 1240px){
+    html{
+        font-size: 9.2px;
+    }
+}
+@media screen and (max-width: 1190px){
+    html{
+        font-size: 9px;
+    }
+}
+@media screen and (max-width: 1140px){
+    html{
+        font-size: 8.8px;
+    }
+}
+@media screen and (max-width: 1090px){
+    html{
+        font-size: 8.6px;
+    }
+}
+@media screen and (max-width: 1024px){
+    html{
+        font-size: 9px;
+    }
+
+    .container{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 974px){
+    html{
+        font-size: 8.8px;
+    }
+}
+@media screen and (max-width: 924px){
+    html{
+        font-size: 8.6px;
+    }
+
+    footer{
+        .container{
+            #footer-info{
+                flex-wrap: wrap;
+                flex-direction: column;
+
+                .info{
+                    width: 100%;
+                    max-width: 46.8rem;
+                    margin-bottom: 2rem;
+
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 874px){
+    html{
+        font-size: 8.4px;
+    }
+}
+@media screen and (max-width: 824px){
+    html{
+        font-size: 8.2px;
+    }
+}
+@media screen and (max-width: 768px){
+    html{
+        font-size: 10px;
+    }
+
+    header{
+        .container{
+            flex-wrap: wrap;
+
+            #header-bar{
+                display: block;
+            }
+
+            #header-menu{
+                display: none;
+                width: 100%;
+                margin-top: 1.5rem;
+                
+                nav{
+                    ul{
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-end;
+                    }
+                }
+            }
+        }
+    }
+
+    main{
+        section#home{
+            height: 94vh;
+
+            .container{
+                #home-scroll{
+                    bottom: 10%;
+                }
+                #home-content{
+                    h3{
+                        font-size: 4rem;
+                    }
+                    h1{
+                        font-size: 5rem;
+                        line-height: normal;
+                    }
+
+                    #home-buttons{
+                        a{
+                            margin: 0 1rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        section#about{
+            .container{
+                #about-content{
+                    flex-wrap: wrap;
+
+                    #about-text{
+                        width: 100%;
+                        margin-bottom: 4.5rem;
+                    }
+
+                    #about-skills{
+                        width: 100%;
+                    }
+                }
+            }
+
+            #about-cards{
+                .container{
+                    flex-wrap: wrap;
+                    flex-direction: column;
+
+                    .card{
+                        width: 100%;
+                        max-width: 46.8rem;
+                        margin-bottom: 2rem;
+                        
+                        &:hover{
+                            transform: scale(1);
+                        }
+
+                        &:last-child{
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        section#features{
+            .container{
+                #features-content{
+                    .feature{
+                        width: calc(50% - 1rem);
+                        margin-bottom: 2rem;
+                    }
+                }
+            }
+        }
+
+        section#pricing{
+            .container{
+                #pricing-content{
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .pricing{
+                        width: 100%;
+                        max-width: 46.8rem;
+                        margin-bottom: 2rem;
+
+                        &:hover{
+                            transform: scale(1);
+                        }
+
+                        &:last-child{
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 718px){
+    html{
+        font-size: 9.8px;
+    }
+}
+@media screen and (max-width: 668px){
+    html{
+        font-size: 9.6px;
+    }
+}
+@media screen and (max-width: 618px){
+    html{
+        font-size: 9.4px;
+    }
+}
+@media screen and (max-width: 568px){
+    html{
+        font-size: 9.2px;
+    }
+}
+@media screen and (max-width: 518px){
+    html{
+        font-size: 9px;
+    }
+
+    main{
+        section#features{
+            .container{
+                #features-content{
+                    .feature{
+                        width: 100%;
+
+                        &:last-child{
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 468px){
+    html{
+        font-size: 10px;
+    }
+
+    main{
+        section#home{
+            .container{
+                #home-content{
+                    h3{
+                        font-size: 2.5rem;
+                    }
+                    h1{
+                        font-size: 4rem;
+                    }
+                }
+            }
+        }
+    }
+
+    footer{
+        padding-bottom: 4.5rem;
+
+        .container{
+            #footer-info{
+                padding-bottom: 4.5rem;
+
+                .info{
+                    padding: 2rem 3rem;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 425px) {
+    html{
+        font-size: 9.75px;
+    }
+}
+@media screen and (max-width: 400px) {
+    html{
+        font-size: 9.5px;
+    }
+}
+@media screen and (max-width: 375px) {
+    html{
+        font-size: 9.25px;
+    }
+}
+@media screen and (max-width: 350px) {
+    html{
+        font-size: 9px;
+    }
+}
+@media screen and (max-width: 325px) {
+    html{
+        font-size: 8.75px;
+    }
+}
 /*#endregion*/

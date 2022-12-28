@@ -23,7 +23,7 @@ body::before {
 }
 
 html {
-  font-size: 10px;
+  font-size: 12px;
   scroll-behavior: smooth;
 }
 
@@ -40,7 +40,7 @@ section {
 }
 
 .title {
-  margin-bottom: 4.5rem;
+  margin-bottom: 5.5rem;
 }
 .title.light h2 {
   color: #fff;
@@ -77,15 +77,19 @@ header {
   overflow: hidden;
   padding: 1.5rem 0;
   z-index: 100;
-  transition-property: background-color, border-bottom;
+  transition-property: background-color, box-shadow;
   transition: 0.3s ease;
 }
 header.scroll {
   background-color: #fff;
-  border-bottom: 0.15rem solid rgba(12, 12, 12, 0.04);
+  box-shadow: 1rem 0 0.5rem rgba(12, 12, 12, 0.2);
+}
+header.scroll .container #header-bar i {
+  color: #00000a;
 }
 header.scroll .container #header-menu nav ul li a {
   color: #00000a;
+  font-weight: 700;
 }
 header .container {
   display: flex;
@@ -93,7 +97,17 @@ header .container {
   align-items: center;
 }
 header .container #header-logo img {
-  width: 10rem;
+  height: 3rem;
+}
+header .container #header-bar {
+  display: none;
+  margin-right: 0.5rem;
+}
+header .container #header-bar i {
+  cursor: pointer;
+  font-size: 2.2rem;
+  color: #fff;
+  transition: color 0.3s ease;
 }
 header .container #header-menu nav ul {
   display: flex;
@@ -107,7 +121,7 @@ header .container #header-menu nav ul li:hover a {
   color: #F24259;
 }
 header .container #header-menu nav ul li a {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #fff;
   padding: 0.8rem;
@@ -209,7 +223,7 @@ main section#home .container #home-content #home-buttons a::after {
   transition: width 0.3s ease;
 }
 main section#home .container #home-content #home-buttons a span {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #fff;
   z-index: 2;
@@ -287,20 +301,36 @@ main section#about .container #about-content #about-skills .skill {
   margin-bottom: 2.5rem;
 }
 main section#about .container #about-content #about-skills .skill p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #00000a;
   margin-bottom: 0.8rem;
 }
 main section#about .container #about-content #about-skills .skill .skill-bar {
+  position: relative;
   background-color: #f7f7f7;
-  height: 0.15rem;
+  height: 0.25rem;
+  border-radius: 3rem;
 }
 main section#about .container #about-content #about-skills .skill .skill-bar span {
-  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 3rem;
   width: 0%;
-  height: 0.15rem;
+  height: 100%;
   background-color: #F24259;
+  transition: width 0.3s ease;
+}
+main section#about .container #about-content #about-skills .skill .skill-bar p {
+  position: absolute;
+  top: -2.5rem;
+  left: 0%;
+  transform: translateX(-100%);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #666;
+  transition: left 0.3s ease;
 }
 main section#about #about-cards {
   padding: 8rem 0;
@@ -322,6 +352,10 @@ main section#about #about-cards .container .card {
   background-color: #fff;
   border-radius: 0.75rem;
   box-shadow: 0 0 1rem rgba(12, 12, 12, 0.075);
+  transition: transform 0.3s ease;
+}
+main section#about #about-cards .container .card:hover {
+  transform: scale(1.05);
 }
 main section#about #about-cards .container .card i {
   font-size: 5rem;
@@ -335,7 +369,7 @@ main section#about #about-cards .container .card h4 {
   margin-bottom: 1.5rem;
 }
 main section#about #about-cards .container .card p {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 400;
   color: #666;
   line-height: 1.6rem;
@@ -365,7 +399,6 @@ main section#features .container #features-content {
   flex-wrap: wrap;
 }
 main section#features .container #features-content .feature {
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -399,7 +432,7 @@ main section#features .container #features-content .feature h4 {
   transition: color 0.3s ease;
 }
 main section#features .container #features-content .feature p {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 400;
   color: #fff;
   line-height: 1.6rem;
@@ -453,13 +486,13 @@ main section#pricing .container #pricing-content .pricing .pricing-price h6 span
   position: absolute;
   top: 0;
   right: 0.5rem;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: #00000a;
 }
 main section#pricing .container #pricing-content .pricing .pricing-price p {
   display: inline-block;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 500;
   color: #666;
   margin-bottom: 1rem;
@@ -478,7 +511,7 @@ main section#pricing .container #pricing-content .pricing .pricing-text ul {
 }
 main section#pricing .container #pricing-content .pricing .pricing-text ul li {
   margin: 0.75rem 0;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 400;
   color: #666;
 }
@@ -517,7 +550,7 @@ main section#pricing .container #pricing-content .pricing .pricing-button a::aft
   transition: width 0.3s ease;
 }
 main section#pricing .container #pricing-content .pricing .pricing-button a span {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #fff;
   z-index: 2;
@@ -556,7 +589,7 @@ main section#contact .container #contact-content form input, main section#contac
   border: none;
   outline: none;
   padding: 1rem;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #00000a;
   background-color: #f7f7f7;
@@ -621,7 +654,7 @@ main section#contact .container #contact-content form a::after {
   transition: width 0.3s ease;
 }
 main section#contact .container #contact-content form a span {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #fff;
   z-index: 2;
@@ -631,6 +664,7 @@ main section#contact .container #contact-content form a span {
 /*#endregion*/
 /*#region Footer Codes*/
 footer {
+  width: 100%;
   padding: 8rem 0;
   background-color: #111;
 }
@@ -641,21 +675,35 @@ footer .container #footer-info {
   align-items: center;
 }
 footer .container #footer-info .info {
+  position: relative;
   cursor: pointer;
   width: calc(33.33% - 2rem);
   padding: 3rem;
-  background-color: #161616;
+  background-color: #171717;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border: 0.15rem solid #161616;
-  transition: border-color 0.3s ease;
 }
-footer .container #footer-info .info:hover {
-  border-color: #F24259;
+footer .container #footer-info .info:hover::after {
+  width: 100%;
+}
+footer .container #footer-info .info:hover .info-text p {
+  color: #fff;
+}
+footer .container #footer-info .info::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #F24259;
+  transition: width 0.3s ease;
+  z-index: 1;
 }
 footer .container #footer-info .info .info-icon {
   margin-right: 3rem;
+  z-index: 2;
 }
 footer .container #footer-info .info .info-icon i {
   font-size: 3.5rem;
@@ -665,6 +713,7 @@ footer .container #footer-info .info .info-text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  z-index: 2;
 }
 footer .container #footer-info .info .info-text h6 {
   font-size: 1.7rem;
@@ -676,6 +725,7 @@ footer .container #footer-info .info .info-text a p {
   font-size: 1.6rem;
   font-weight: 500;
   color: #666;
+  transition: color 0.3s ease;
 }
 footer .container #footer-content {
   display: flex;
@@ -686,7 +736,7 @@ footer .container #footer-content #footer-logo {
   padding: 1.5rem 0;
 }
 footer .container #footer-content #footer-logo a img {
-  width: 10rem;
+  height: 3.5rem;
 }
 footer .container #footer-content #footer-social {
   margin: 1.5rem 0 2.5rem 0;
@@ -712,7 +762,7 @@ footer .container #footer-content #footer-copyright {
   text-align: center;
 }
 footer .container #footer-content #footer-copyright p {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: #666;
 }
@@ -725,4 +775,279 @@ footer .container #footer-content #footer-copyright p a:hover {
   color: #fff;
 }
 
+/*#endregion*/
+/*#region Responsive Codes*/
+@media screen and (max-width: 1790px) {
+  html {
+    font-size: 11.75px;
+  }
+}
+@media screen and (max-width: 1740px) {
+  html {
+    font-size: 11.5px;
+  }
+}
+@media screen and (max-width: 1690px) {
+  html {
+    font-size: 11.25px;
+  }
+}
+@media screen and (max-width: 1640px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 1590px) {
+  html {
+    font-size: 10.75px;
+  }
+}
+@media screen and (max-width: 1540px) {
+  html {
+    font-size: 10.5px;
+  }
+}
+@media screen and (max-width: 1490px) {
+  html {
+    font-size: 10.25px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 1390px) {
+  html {
+    font-size: 9.8px;
+  }
+}
+@media screen and (max-width: 1340px) {
+  html {
+    font-size: 9.6px;
+  }
+}
+@media screen and (max-width: 1290px) {
+  html {
+    font-size: 9.4px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  html {
+    font-size: 9.2px;
+  }
+}
+@media screen and (max-width: 1190px) {
+  html {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 1140px) {
+  html {
+    font-size: 8.8px;
+  }
+}
+@media screen and (max-width: 1090px) {
+  html {
+    font-size: 8.6px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 9px;
+  }
+  .container {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 974px) {
+  html {
+    font-size: 8.8px;
+  }
+}
+@media screen and (max-width: 924px) {
+  html {
+    font-size: 8.6px;
+  }
+  footer .container #footer-info {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  footer .container #footer-info .info {
+    width: 100%;
+    max-width: 46.8rem;
+    margin-bottom: 2rem;
+  }
+  footer .container #footer-info .info:last-child {
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 874px) {
+  html {
+    font-size: 8.4px;
+  }
+}
+@media screen and (max-width: 824px) {
+  html {
+    font-size: 8.2px;
+  }
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 10px;
+  }
+  header .container {
+    flex-wrap: wrap;
+  }
+  header .container #header-bar {
+    display: block;
+  }
+  header .container #header-menu {
+    display: none;
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+  header .container #header-menu nav ul {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+  main section#home {
+    height: 94vh;
+  }
+  main section#home .container #home-scroll {
+    bottom: 10%;
+  }
+  main section#home .container #home-content h3 {
+    font-size: 4rem;
+  }
+  main section#home .container #home-content h1 {
+    font-size: 5rem;
+    line-height: normal;
+  }
+  main section#home .container #home-content #home-buttons a {
+    margin: 0 1rem;
+  }
+  main section#about .container #about-content {
+    flex-wrap: wrap;
+  }
+  main section#about .container #about-content #about-text {
+    width: 100%;
+    margin-bottom: 4.5rem;
+  }
+  main section#about .container #about-content #about-skills {
+    width: 100%;
+  }
+  main section#about #about-cards .container {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  main section#about #about-cards .container .card {
+    width: 100%;
+    max-width: 46.8rem;
+    margin-bottom: 2rem;
+  }
+  main section#about #about-cards .container .card:hover {
+    transform: scale(1);
+  }
+  main section#about #about-cards .container .card:last-child {
+    margin-bottom: 0;
+  }
+  main section#features .container #features-content .feature {
+    width: calc(50% - 1rem);
+    margin-bottom: 2rem;
+  }
+  main section#pricing .container #pricing-content {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+  main section#pricing .container #pricing-content .pricing {
+    width: 100%;
+    max-width: 46.8rem;
+    margin-bottom: 2rem;
+  }
+  main section#pricing .container #pricing-content .pricing:hover {
+    transform: scale(1);
+  }
+  main section#pricing .container #pricing-content .pricing:last-child {
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 718px) {
+  html {
+    font-size: 9.8px;
+  }
+}
+@media screen and (max-width: 668px) {
+  html {
+    font-size: 9.6px;
+  }
+}
+@media screen and (max-width: 618px) {
+  html {
+    font-size: 9.4px;
+  }
+}
+@media screen and (max-width: 568px) {
+  html {
+    font-size: 9.2px;
+  }
+}
+@media screen and (max-width: 518px) {
+  html {
+    font-size: 9px;
+  }
+  main section#features .container #features-content .feature {
+    width: 100%;
+  }
+  main section#features .container #features-content .feature:last-child {
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 468px) {
+  html {
+    font-size: 10px;
+  }
+  main section#home .container #home-content h3 {
+    font-size: 2.5rem;
+  }
+  main section#home .container #home-content h1 {
+    font-size: 4rem;
+  }
+  footer {
+    padding-bottom: 4.5rem;
+  }
+  footer .container #footer-info {
+    padding-bottom: 4.5rem;
+  }
+  footer .container #footer-info .info {
+    padding: 2rem 3rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  html {
+    font-size: 9.75px;
+  }
+}
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 9.5px;
+  }
+}
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 9.25px;
+  }
+}
+@media screen and (max-width: 350px) {
+  html {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 325px) {
+  html {
+    font-size: 8.75px;
+  }
+}
 /*#endregion*//*# sourceMappingURL=style.css.map */
